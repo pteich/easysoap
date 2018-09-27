@@ -234,7 +234,8 @@
                 self._headers = params.headers;
             }
         }
-
+        delete params.headers;
+        
         const requestXml = await self.getRequestXml(params, this._params, this._opts);
         const result = await asyncRequest({
             url               : this._url,
